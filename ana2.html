@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortada A4 Boyutunda Sayfa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        /* Tüm sayfanın sıfırlanması için */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Sayfanın tamamına arka plan ekleyip ortada boşluk bırakmak için */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* İçeriği yukarıdan başlat */
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0e0e0;
+            /* Dış arka plan rengi */
+            padding: 0;
+            /* Padding kaldırıldı */
+        }
+
+        /* A4 boyutunda bir container */
+        .a4-container {
+            width: 260mm;
+            /* A4 kağıt genişliği */
+            height: 500mm;
+            /* A4 kağıt yüksekliği */
+            background-color: white;
+            /* İçerik arka planı beyaz */
+            padding: 20px;
+            /* İç boşluk */
+            border-radius: 8px;
+            /* Kenarları hafif yuvarlama */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            /* Gölge efekti */
+            margin-top: 20px;
+            /* Navigasyon çubuğuyla arasında boşluk*/
+            display: flex;
+            /* Flexbox düzeni için */
+            flex-direction: column;
+            /* Dikey düzen */
+        }
+
+        /* Başlık ayarları */
+        h1 {
+            text-align: center;
+            /* Başlık metni ortala */
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px 0;
+            /* Başlık için üst ve alt boşluk */
+        }
+
+        /* Metin ve resim düzeni */
+        .content {
+            display: flex;
+            /* Metin ve resmin yan yana olması için */
+            width: 100%;
+        }
+
+        /* Metin bölümü */
+        .text-content {
+            flex: 0 0 65%;
+            /* Metin alanı %65 genişliğinde */
+            padding-right: 20px;
+            /* Sağdan boşluk */
+        }
+
+        /* Resim bölümü */
+        .image-container {
+            flex: 0 0 35%;
+            /* Resim alanı %35 genişliğinde */
+            display: flex;
+            flex-direction: column;
+            /* Resimleri dikey olarak yerleştir */
+            align-items: center;
+            /* Resimleri ortala */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Resmin konteynerine uyması için */
+            height: auto;
+            /* Yüksekliği koru */
+            border-radius: 4px;
+            /* Kenarları hafif yuvarlama */
+
+            margin-bottom: 20px;
+            /* Resimler arasında boşluk bırak */
+        }
+
+        p {
+            text-align: justify;
+            /* Metni iki yana yasla */
+            line-height: 1.5;
+            /* Satırlar arası boşluk */
+            margin-bottom: 10px;
+            /* Paragraflar arası boşluk */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            /* Yazı boyutunu burada belirledim */
+        }
+
+        /* Navigation bar ayarları */
+        .navbar {
+            margin-bottom: 0;
+            /* A4 sayfasıyla aralarındaki boşluğu kaldır */
+            width: 100%;
+            /* Tam genişlik */
+            position: fixed;
+            /* Sayfada sabit kalmasını sağlar */
+            top: 0;
+            /* Sayfanın en üstünde kalır */
+            width: 100%;
+            /* Tüm genişliği kaplar */
+            background-color: #333;
+            /* Arka plan rengi */
+            padding: 10px 0;
+            /* Üst ve alt boşluklar */
+            z-index: 1000;
+            /* Diğer içeriklerin altında kalmaması için yüksek z-index */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+            color: #ff0000;
+            /* Daha koyu veya farklı bir renk */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+                <li style="font-size: 20px;" class="active"><a href="ana2.html">Giriş</a></li>
+                <li style="font-size: 20px;"><a href="kisiselHayatı.html">Kişisel Özellikleri</a></li>
+                <li style="font-size: 20px;"><a href="ozelHayatı.html">Özel Hayatı</a></li>
+                <li style="font-size: 20px;"><a href="deneme2.html">Resimler</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="a4-container">
+        <h1 style="padding-top: 25px;"><b>ADOLF HITLER</b></h1>
+        <img src="resimler/selammm.jpg" alt="Adolf Hitler" style="height: 430px; width:260mm; padding-right: 40px;">
+
+        <div class="content">
+            <div class="text-content">
+                <p style="padding-top: 35px; font-size: 18px;"><b>Adolf Hitler</b> (20 Nisan 1889, Braunau am Inn - 30
+                    Nisan 1945, Berlin), Avusturya doğumlu Alman politikacı ve Nasyonal Sosyalist Alman İşçi Partisi
+                    lideridir. 20. yüzyılın en güçlü ve nüfuzlu diktatörlerinden biri olarak kabul edilir.</p>
+                <p style="font-size: 18px;">1919'da Alman İşçi Partisine (Deutsche Arbeiterpartei; DAP) üye olmasıyla
+                    başlayan politik yaşamı, bu partinin 1920'de Nasyonal Sosyalist Alman İşçi Partisine
+                    (Nationalsozialistische Deutsche Arbeiterpartei; NSDAP) dönüşmesiyle devam etti ve 1921'de parti
+                    başkanlığına yükseldi.</p>
+
+                <p style="font-size: 18px;">Hitler'in Şansölye seçilmesi için önündeki engel 1925'ten 1932'ye kadar
+                    vatansız statüde olmasıydı. Bu engeli kaldırmak adına, dönemin İçişleri Bakanı ve aynı zamanda Thule
+                    Cemiyetinin üyelerinden olan Bakan Dietrich Klagges'in yaptığı atamayla, Berlin'de bulunan Brunswick
+                    temsilciliğine atanarak devlet memuru statüsü kazandı ve Alman vatandaşlığına geçti. 1933'te, ülkede
+                    kurulan yeni koalisyon hükûmetinin başkanlığına atanmasıyla Şansölye (Reichskanzler) oldu. 1934'te,
+                    Cumhurbaşkanı'nın (Reichspräsident) makamını devraldı ve Führer (Lider) adında bir devlet başkanlığı
+                    makamı yarattı; devlet ve hükûmet başkanlıklarını Führer und Reichskanzler unvanını kullanarak bir
+                    arada yürüttü. Diktatörlüğü 30 Nisan 1945'te intihar etmesiyle son buldu. 1 Eylül 1939'da Polonya
+                    Seferi ile Avrupa’da II. Dünya Savaşı'nı başlattı. Savaş boyunca askeri operasyonlarla yakından
+                    ilgilendi ve Holokost'un sürdürülmesinin merkezinde yer aldı.</p>
+
+
+                <p style="font-size: 18px;">Hitler, Almanya'da I. Dünya Savaşı sonrasında yaşanan Büyük Buhran'dan güç
+                    kazandı. Propaganda ve etkileyici bir dille, alt ve orta tabakanın ekonomik istemlerine ümit
+                    veriyordu; bunun yanında da belli bir seviyede milliyetçilik, Nazilerce yeniden tanımlanan
+                    sosyalizm, antisemitizm ve anti-komünizm de sunuyordu. Ekonominin tekrar kurulması, yeniden
+                    silahlandırılmış bir ordu, totaliter ve faşist bir rejimle; Hitler Almanya içerisindeki düzeni
+                    yeniden tesis etti ve güçlü bir ülke yarattıktan sonra, saldırgan bir dış politika izleyerek Alman
+                    “yaşam alanı”nı (Lebensraum) genişletmek amacıyla Polonya’ya saldırdı. Yıldırım savaşı (Blitzkrieg)
+                    taktikleri ve Mihver Devletleri ittifakı ile birlikte Avrupa’nın büyük bölümünü, Asya’nın ve
+                    Afrika’nın bir bölümünü işgal etti.</p>
+
+
+                <p style="font-size: 18px;">ABD’nin II. Dünya Savaşı’na Müttefikler’in tarafında katılması ve Kızıl
+                    Ordu’nun ilerlemesi ile Alman ordusu gerilemeye başladı. Sovyet güçlerinin 23 Nisan 1945’te Berlin’e
+                    girmesi ile Almanya’nın yenilgisi kesinleşmişti. Hitler; işgal altındaki Berlin’de, eşi Eva Hitler
+                    (Eva Braun) ile yer altı sığınağında (Führerbunker) 30 Nisan 1945 günü intihar etti. Cesedi,
+                    vasiyeti üzerine takipçileri tarafından yakıldı. Alfred Jodl’ın 7 Mayıs 1945’te imzalayıp ertesi gün
+                    yürürlüğe giren teslim belgesiyle Büyük Alman İmparatorluğu son buldu.</p>
+                <p style="font-size: 18px;">Hitler’in saldırgan dış politikası, Avrupa’da II. Dünya Savaşı’nın patlak
+                    vermesinin ana nedeni olarak kabul edilir. Onun Yahudi karşıtı politikaları ve ırkçı ideolojisi,
+                    aşağı ırk mensubu olarak gördüğü en az 5,5 milyon insanın ölümüne neden oldu.</p>
+
+
+
+            </div>
+            <div class="image-container" style="padding: 10px; margin-top: 40px;">
+                <table>
+                    <tr style="padding-top: 15px;">
+                        <td><img src="resimler/cano.jpg" alt="Adolf Hitler"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><a
+                                href="https://ataturkansiklopedisi.gov.tr/bilgi/adolf-hitler-1889-1945/" target="_blank"
+                                style="color:rgb(40, 40, 159) ;">
+                                <b>Adolf Hitler</b>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 20px;"><img src="resimler/cizimi.jpg" alt="Adolf Hitlere Ait Çizim">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Paintings_by_Adolf_Hitler" target="_blank"
+                                style="color: rgb(40, 40, 159);">
+                                <b>Hitler’in 1913 senesinde çizdiği, yağlı boya bir Meryem ile İsa tablosu.</b>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 20px;"><img src="resimler/arkadas.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://tr.wikipedia.org/wiki/Adolf_Hitler%27in_asker%C3%AE_kariyeri"
+                                target="_blank" style="color:rgb(40, 40, 159) ;">
+                                <b>Hitler (en sağda) ve silah arkadaşları</b>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                    <!-- <img src="resimler/selamdur.jpg" alt="Ek Resim 1"> -->
+                    <!-- <img src="resimler/ciddi.jpg" alt="Ek Resim 2" style="height: 400px;"> -->
+                </table>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

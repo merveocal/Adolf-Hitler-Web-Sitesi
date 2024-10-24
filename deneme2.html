@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* İçeriği yukarıdan başlat */
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0e0e0;
+            /* Dış arka plan rengi */
+            padding: 0;
+            /* Padding kaldırıldı */
+        }
+
+        .container {
+            background-color: #ffffff;
+            /* Beyaz sayfa */
+            width: 260mm;
+            /* Sayfa genişliği */
+            height: 900mm;
+            /* Sayfa yüksekliği */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            /* Hafif gölge efekti */
+            padding: 20px;
+
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Her satırda 3 resim */
+            gap: 20px;
+            /* Resimler arası boşluk */
+            justify-items: center;
+            /* Resimleri ortala */
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            /* Resmi alanla orantılı şekilde sığdır */
+            border-radius: 15px;
+            /* Kenarları yumuşatma */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Hafif gölge efekti */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            /* Üzerine gelindiğinde büyüme efekti */
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            /* Yazı rengi */
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .navbar {
+
+            margin-bottom: 0;
+            /* A4 sayfasıyla aralarındaki boşluğu kaldır */
+            width: 100%;
+            /* Tam genişlik */
+            position: fixed;
+            /* Sayfada sabit kalmasını sağlar */
+            top: 0;
+            /* Sayfanın en üstünde kalır */
+            width: 100%;
+            /* Tüm genişliği kaplar */
+            background-color: #333;
+            /* Arka plan rengi */
+            padding: 10px 0;
+            /* Üst ve alt boşluklar */
+            z-index: 1000;
+            /* Diğer içeriklerin altında kalmaması için yüksek z-index */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+            color: #140606;
+            /* Daha koyu veya farklı bir renk */
+        }
+
+        /*burda bazı linklerin dış kenarlığını kırmızı yaptım ki onlara tıkladığımda beni başka bir sayfaya attığını anlayayım*/
+        .image-link {
+            display: inline-block;
+            /* Resim etrafındaki çerçeve için gerekli */
+            border: 2px solid rgb(40, 40, 159);
+            /* Kırmızı çerçeve */
+            border-radius: 10px;
+            /* Yumuşak köşeler için */
+            overflow: hidden;       
+            /* Kenarların dışına taşmasını önler */
+          
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+                <li style="font-size: 20px;"><a href="ana2.html">Giriş</a></li>
+                <li style="font-size: 20px;"><a href="kisiselHayatı.html">Kişisel Özellikleri</a></li>
+                <li style="font-size: 20px;"><a href="ozelHayatı.html">Özel Hayatı</a></li>
+                <li style="font-size: 20px;" class="active"><a href="deneme2.html">Resimler</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="gallery ">
+            <div class="gallery-item " style="padding-top: 100px;">
+                <a href="https://tr.wikipedia.org/wiki/Adolf_Hitler" target="_blank" class="image-link ">
+                    <img src="resimler2/ilk1.jpg" alt="Fotoğraf 1">
+                </a>
+                <p style="font-size: 18px;">Adolf Hitler</p>
+
+            </div>
+            <div class="gallery-item" style="padding-top: 100px;">
+                <img src="resimler2/ilk2.jpg" alt="Bebeklik Fotoğrafı">
+                <p>Bebekliğine ait bilinen tek fotoğrafı.</p>
+            </div>
+            <div class="gallery-item" style="padding-top: 100px;">
+                <img src="resimler2/ilk3.jpg" alt="Fotoğraf 3">
+                <p>İlkokul fotoğrafı (ortadaki Hitler) y. 1900.</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://en.wikipedia.org/wiki/Klara_Hitler" target="_blank" class="image-link">
+                    <img src="resimler2/ilk4.jpg" alt="Annesi Klara">
+                </a>
+                <p>Annesi, Klara</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://en.wikipedia.org/wiki/Alois_Hitler" target="_blank" class="image-link">
+                    <img src="resimler2/ilk5.jpeg" alt="Fotoğraf 5">
+                </a>
+
+                <p>Babası, Alois</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://l24.im/dA4h" target="_blank" class="image-link">
+                    <img src="resimler2/ilk6.jpg" alt="Fotoğraf 6">a
+                </a>
+                <p>Hitler’in Viyana Devlet Operası’nı resmettiği tablosu (1912)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk7.jpg" alt="Fotoğraf 7" >
+                <p>Hitler’in 1913 senesinde çizdiği, yağlı boya bir Meryem ile İsa tablosu.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk8.jpg" alt="Fotoğraf 8">
+                <p>I. Dünya Savaşı’nda Adolf Hitler</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk9.jpg" alt="Fotoğraf 9">
+                <p>Hitler (en sağda) ve silah arkadaşları</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk10.jpg" alt="Fotoğraf 10">
+                <p>Hitler, Messines Manastırı Enkazı (1914)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk11.png" alt="Fotoğraf 11">
+                <p>Bu on birinci fotoğrafın açıklaması.</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://tr.wikipedia.org/wiki/Nasyonal_Sosyalist_Alman_%C4%B0%C5%9F%C3%A7i_Partisi"
+                    target="_blank" class="image-link" >
+                    <img src="resimler2/ilk12.jpg" alt="Fotoğraf 12">
+                </a>
+                <p>Hitler ve diğer birkaç NSDAP yöneticisi (1920’ler)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk13.jpg" alt="Fotoğraf 12">
+                <p>Hitler, tezahürat yapan bir kalabalığın arasından Cumhurbaşkanı Hindenburg ile görüşmeye gidiyor
+                    (Kasım 1932)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk133.jpg" alt="Fotoğraf 12">
+                <p>Cumhurbaşkanı Hindenburg, yeni şansölye Hitler ile görüşüyor (21 Mart 1933)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk14.jpg" alt="Fotoğraf 12">
+                <p>Tempelhof-Schöneberg Havaalanı’nda Hitler; SA lideri Ernst Röhm ve Reichstag Başkanı Hermann Göring
+                    ile hükûmet krizini tartışıyor (Kasım 1932)</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://l24.im/YOFfuc7" target="_blank">
+                    <img src="resimler2/ilk15.jpg" alt="Fotoğraf 12"  class="image-link">
+                </a>
+                <p>Hitler, kurulan yeni kabinenin üyeleri ile görüşüyor (30 Ocak 1933)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk16.jpg" alt="Fotoğraf 12">
+                <p>Müteşebbis Hans Ledwinka, Berlin Otomobil Fuarı’nda Tatra T77’nin motorunu ve şanzımanını Hitler’e
+                    gösteriyor (8 Mart 1934)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk19.jpg" alt="Fotoğraf 12">
+                <p>20 Nisan 1943 tarihli Alman posta pulu</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk20.jpg" alt="Fotoğraf 12">
+                <p>Hitler ABD'ye savaş ilanı ediyor. (Reichstag, 1941)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk21.jpg" alt="Fotoğraf 12">
+                <p>Hitler, Güney Ordular Grubu'nun karargâhında bir toplantı sırasında (Haziran 1942)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk23.jpg" alt="Fotoğraf 12">
+                <p>Hitler, Ordu Grubu Vistül karargahında generalleri ile görüşüyor (16 Mart 1945)</p>
+            </div>
+            <div class="gallery-item">
+                <img src="resimler2/ilk24.jpg" alt="Fotoğraf 12">
+                <p>Hitler ve Japon dışişleri bakanı Yōsuke Matsuoka, Mart 1941'de Berlin'de bir toplantıda. Arkada
+                    Joachim von Ribbentrop var.</p>
+            </div>
+            <div class="gallery-item">
+                <a href="https://tr.wikipedia.org/wiki/Gretl_Braun" target="_blank" class="image-link">
+                    <img src="resimler2/ilk25.jpg" alt="Fotoğraf 12">
+                </a>
+                <p>Hermann Fegelein ve Gretl Braun'un düğünü vesilesiyle Berghof'un büyük salonunda çekilen grup
+                    fotoğrafı ( 3 Haziran 1944)</p>
+            </div>
+            <div class="gallery-item" style="padding-bottom: 100px;">
+                <img src="resimler2/ilk26.jpg" alt="Fotoğraf 12">
+                <p>Hitler üç saatlik Paris gezisinde (solda Albert Speer, sağda Walter Frentz, Chaillot Sarayı, Paris,
+                    23 Haziran 1940)</p>
+            </div>
+
+
+
+            <!-- Kalan fotoğraflar da aynı yapıda olacak -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

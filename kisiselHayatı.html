@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortada A4 Boyutunda Sayfa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        /* Tüm sayfanın sıfırlanması için */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Sayfanın tamamına arka plan ekleyip ortada boşluk bırakmak için */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* İçeriği yukarıdan başlat */
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0e0e0;
+            /* Dış arka plan rengi */
+            padding: 0;
+            /* Padding kaldırıldı */
+        }
+
+        /* A4 boyutunda bir container */
+        .a4-container {
+            width: 260mm;
+            /* A4 kağıt genişliği */
+            height: 300mm;
+            /* A4 kağıt yüksekliği */
+            background-color: white;
+            /* İçerik arka planı beyaz */
+            padding: 20px;
+            /* İç boşluk */
+            border-radius: 8px;
+            /* Kenarları hafif yuvarlama */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            /* Gölge efekti */
+            margin-top: 20px;
+            /* Navigasyon çubuğuyla arasında boşluk*/
+            display: flex;
+            /* Flexbox düzeni için */
+            flex-direction: column;
+            /* Dikey düzen */
+        }
+
+        /* Başlık ayarları */
+        h1 {
+            text-align: center;
+            /* Başlık metni ortala */
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px 0;
+            /* Başlık için üst ve alt boşluk */
+        }
+
+        /* Metin ve resim düzeni */
+        .content {
+            display: flex;
+            /* Metin ve resmin yan yana olması için */
+            width: 100%;
+        }
+
+        /* Metin bölümü */
+        .text-content {
+            flex: 0 0 65%;
+            /* Metin alanı %65 genişliğinde */
+            padding-right: 20px;
+            /* Sağdan boşluk */
+        }
+
+        /* Resim bölümü */
+        .image-container {
+            flex: 0 0 35%;
+            /* Resim alanı %35 genişliğinde */
+            display: flex;
+            flex-direction: column;
+            /* Resimleri dikey olarak yerleştir */
+            align-items: center;
+            /* Resimleri ortala */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Resmin konteynerine uyması için */
+            height: auto;
+            /* Yüksekliği koru */
+            border-radius: 4px;
+            /* Kenarları hafif yuvarlama */
+            margin-bottom: 10px;
+            /* Resimler arasında boşluk bırak */
+        }
+
+        p {
+            text-align: justify;
+            /* Metni iki yana yasla */
+            line-height: 1.5;
+            /* Satırlar arası boşluk */
+            margin-bottom: 10px;
+            /* Paragraflar arası boşluk */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            /* Yazı boyutunu burada belirledim */
+        }
+
+        /* Navigation bar ayarları */
+
+        .navbar {
+            margin-bottom: 0;
+            /* A4 sayfasıyla aralarındaki boşluğu kaldır */
+            width: 100%;
+            /* Tam genişlik */
+            position: fixed;
+            /* Sayfada sabit kalmasını sağlar */
+            top: 0;
+            /* Sayfanın en üstünde kalır */
+            width: 100%;
+            /* Tüm genişliği kaplar */
+            background-color: #333;
+            /* Arka plan rengi */
+            padding: 10px 0;
+            /* Üst ve alt boşluklar */
+            z-index: 1000;
+            /* Diğer içeriklerin altında kalmaması için yüksek z-index */
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .navbar a.active {
+            font-weight: bold;
+            color: #ff0000;
+            /* Daha koyu veya farklı bir renk */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+         
+          <ul class="nav navbar-nav">
+            <li style="font-size: 20px;"><a href="ana2.html">Giriş</a></li>
+            <li style="font-size: 20px;" class="active"><a href="kisiselHayatı.html">Kişisel Özellikleri</a></li>
+            <li style="font-size: 20px;"><a href="ozelHayatı.html">Özel Hayatı</a></li>
+            <li style="font-size: 20px;"><a href="deneme2.html">Resimler</a></li>
+          </ul>
+        </div>
+      </nav>
+        
+
+    <div class="a4-container">
+        <h1 style="padding-top: 25px;"><b>Adolf Hitler'in Kişisel Özellikleri</b></h1>
+        <div class="content">
+            <div class="text-content" style="padding-top: 20px;">
+                <p style="padding-top: 20px;">Hitler'in genel olarak ele alınan en önemli özelliği insanları çabuk
+                    etkileyebiliyor olmasıydı.
+                    Bu, nasyonal sosyalizm propagandasıyla birleştirilerek halka sunuluyordu. Hitler'in üstün bir insan
+                    olduğu lanse ediliyor,
+                    konuşmalarındaki tavırlarıyla bunu, onu dinleyen kitleye hissettirmeye çalışıyordu. Çoğu NSDAP
+                    yöneticisinin onu saplantılı bir biçimde benimsemesi ve
+                    bu yöneticilerin halkla bir araya geldiklerinde kendi iç yapılarının Hitler'e bağımlı olduğunu bariz
+                    şekilde göstermesi yapılan propagandanın etkilerindedir.
+                    Nazi Almanyası Hava Kuvvetleri Komutanı olan Hermann Göring, Hitler için şöyle demiştir: Ben
+                    vicdansız biriyim. Benim vicdanım Adolf Hitler'dir</p>
+
+                <p>Hitler, mücadeleci bir kişilik sergilemeye çalışıyor ve üstün niteliklere sahipmiş izlenimi vermek
+                    için vücut dilini etkin bir biçimde kullanıyordu.
+                    Sert bakışlar, ani hareketler ve uzun konuşmalar propaganda amacı ile yapılan ayrıntılardı.
+                    Kendisini yanılmaz, hata yapmaz bir lider olarak göstermeye çalışıyor,
+                    eskiden savunduğu görüşleri hâlen sıkı sıkıya savunduğunu belirtiyordu. Goebbels onun için şöyle
+                    demiştir: Führer hiç değişmez. Çocukken nasılsa şimdi de öyledir</p>
+
+                <p>Saplantılarla dolu hayatında sanata çok önem vermiş, özellikle resim konusunda kendisini otorite
+                    olarak kabul etmiştir.
+                    Annesinin ölümünden sonra sulu boya resimler yaparak otel odalarında yaşadığı biliniyor, kazandığı
+                    parayla müzeleri geziyor, umarsızca parasını tüketiyordu..</p>
+
+                <p>Opera müziğine saplantılı derecede hayrandı. Gençliğiyle ilgili anılarında anlatmış olduğuna göre,
+                    harçlığının bir kısmını düzenli aralıklarla operaya gitmek için harcamaktaydı. Alman opera bestecisi
+                    Richard Wagner'a tutkuyla bağlıydı.
+                    Hitler'in Wagner takıntısı 12 yaşında başladı. Besteci, onun üzerinde oldukça etkili olmuştu. Adolf
+                    Hitler, kitabı Kavgam'ın ilk bölümünde şöyle
+                    yazmıştı: 12 yaşıma geldiğimde, hayatımdaki ilk operayı gördüm, Lohengrin. Bir anda bağımlısı oldum.
+                    Bavyera Ustası (Richard Wagner) için olan gençlik coşkum
+                    sınır tanımıyordu.</p>
+            </div>
+            <div class="image-container" style="padding: 45px;">
+                <table>
+                    <tr>
+                        <td><img src="resimler/ordugah.jpg" alt="Adolf Hitler"></td>
+                            <!-- <img src="resimler/ordugah.jpg" alt="Adolf Hitler"></td> -->
+                    </tr>
+                    <tr>
+                        <td><a href="https://tr.wikipedia.org/wiki/Berlin_Muharebesi" target="_blank" style="color: rgb(40, 40, 159);">
+                            <b>Hitler, Ordu Grubu Vistül karargahında generalleri ile görüşüyor (16 Mart 1945)</b></a>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 20px;"><img src="resimler/dugun.jpg" alt="Ek Resim 1"></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 20px;"><a href="https://tr.wikipedia.org/wiki/Gretl_Braun" style="color: rgb(40, 40, 159)" target="_blank">
+                            <b>Hermann Fegelein ve Gretl Braun'un düğünü vesilesiyle
+                            Berghof'un büyük salonunda çekilen grup fotoğrafı ( 3 Haziran 1944)</b>
+                        </a>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 20px;"><img src="resimler/miting.png" alt="Ek Resim 1"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Hitler'in Nürnberg’te çekilmiş bu resmi, vücut dilini kullanmasına örnektir. Mitinglerde
+                                halkı etkilemek için bu yolu sürekli kullanıyordu.</b></td>
+                    </tr>
+
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

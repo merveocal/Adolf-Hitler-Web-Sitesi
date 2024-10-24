@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortada A4 Boyutunda Sayfa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        /* Tüm sayfanın sıfırlanması için */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Sayfanın tamamına arka plan ekleyip ortada boşluk bırakmak için */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* İçeriği yukarıdan başlat */
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0e0e0;
+            /* Dış arka plan rengi */
+            padding: 0;
+            /* Padding kaldırıldı */
+        }
+
+        /* A4 boyutunda bir container */
+        .a4-container {
+            width: 260mm;
+            /* A4 kağıt genişliği */
+            height: 650mm;
+            /* A4 kağıt yüksekliği */
+            background-color: white;
+            /* İçerik arka planı beyaz */
+            padding: 20px;
+            /* İç boşluk */
+            border-radius: 8px;
+            /* Kenarları hafif yuvarlama */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            /* Gölge efekti */
+            margin-top: 20px;
+            /* Navigasyon çubuğuyla arasında boşluk*/
+            display: flex;
+            /* Flexbox düzeni için */
+            flex-direction: column;
+            /* Dikey düzen */
+        }
+
+        /* Başlık ayarları */
+        h1 {
+            text-align: center;
+            /* Başlık metni ortala */
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px 0;
+            /* Başlık için üst ve alt boşluk */
+        }
+
+        /* Metin ve resim düzeni */
+        .content {
+            display: flex;
+            /* Metin ve resmin yan yana olması için */
+            width: 100%;
+        }
+
+        /* Metin bölümü */
+        .text-content {
+            flex: 0 0 65%;
+            /* Metin alanı %65 genişliğinde */
+            padding-right: 20px;
+            /* Sağdan boşluk */
+        }
+
+        /* Resim bölümü */
+        .image-container {
+            flex: 0 0 35%;
+            /* Resim alanı %35 genişliğinde */
+            display: flex;
+            flex-direction: column;
+            /* Resimleri dikey olarak yerleştir */
+            align-items: center;
+            /* Resimleri ortala */
+        }
+
+        .image-container img {
+            width: 100%;
+            /* Resmin konteynerine uyması için */
+            height: auto;
+            /* Yüksekliği koru */
+            border-radius: 4px;
+            /* Kenarları hafif yuvarlama */
+
+            margin-bottom: 20px;
+            /* Resimler arasında boşluk bırak */
+        }
+
+        p {
+            text-align: justify;
+            /* Metni iki yana yasla */
+            line-height: 1.5;
+            /* Satırlar arası boşluk */
+            margin-bottom: 10px;
+            /* Paragraflar arası boşluk */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            /* Yazı boyutunu burada belirledim */
+        }
+
+        /* Navigation bar ayarları */
+        /* .navbar {
+            margin-bottom: 0;
+            /* A4 sayfasıyla aralarındaki boşluğu kaldır 
+            width: 100%;
+            /* Tam genişlik 
+        } */
+
+        .navbar {
+            margin-bottom: 0;
+            /* A4 sayfasıyla aralarındaki boşluğu kaldır */
+            width: 100%;
+            /* Tam genişlik */
+            position: fixed;
+            /* Sayfada sabit kalmasını sağlar */
+            top: 0;
+            /* Sayfanın en üstünde kalır */
+            width: 100%;
+            /* Tüm genişliği kaplar */
+            background-color: #333;
+            /* Arka plan rengi */
+            padding: 10px 0;
+            /* Üst ve alt boşluklar */
+            z-index: 1000;
+            /* Diğer içeriklerin altında kalmaması için yüksek z-index */
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .navbar a.active {
+            font-weight: bold;
+            color: #ff0000;
+            /* Daha koyu veya farklı bir renk */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+         
+          <ul class="nav navbar-nav">
+            <li style="font-size: 20px;"><a href="ana2.html">Giriş</a></li>
+            <li style="font-size: 20px;"><a href="kisiselHayatı.html">Kişisel Özellikleri</a></li>
+            <li style="font-size: 20px;" class="active"><a href="ozelHayatı.html">Özel Hayatı</a></li>
+            <li style="font-size: 20px;"><a href="deneme2.html">Resimler</a></li>
+          </ul>
+        </div>
+      </nav>
+        
+
+    <div class="a4-container">
+        <h1 style="padding-top: 25px;"><b>Adolf Hitler'in Özel Hayatı</b></h1>
+        <div class="content">
+            <div class="text-content">
+                <h3 style="font-family: 'Times New Roman', Times, serif;"><b>Aile</b></h3>
+                <p style="padding-top: 20px;">Hitler, kendisini tamamen siyasi misyonuna ve millete adamış, ev hayatı
+                    olmayan bekâr bir adam olarak kamusal bir imaj yarattı.
+                    1929'da sevgilisi Eva Braun ile tanıştı ve her ikisi de intihar etmeden bir gün önce 29 Nisan
+                    1945'te onunla evlendi.[98] Eylül 1931'de üvey yeğeni
+                    Geli Raubal, Münih'teki dairesinde Hitler'in silahıyla intihar etti. Günümüz söylentileri arasında
+                    arasında Geli'nin kendisiyle romantik bir ilişki içinde olduğu
+                    ve ölümünün derin, kalıcı bir acı duyduğu söylentileri vardı.Hitler'in küçük kız kardeşi ve yakın
+                    ailesinin yaşayan son üyesi Paula Hitler, Haziran 1960'ta öldü.</p>
+
+                <h3 style="font-family: 'Times New Roman', Times, serif;"><b>Din Üzerine Görüşleri</b></h3>
+                <p>Hitler, Katolik bir anne ve antiklerikal görüşleri olan bir babanın çocuğu olarak dünyaya geldi;
+                    Hitler evden ayrıldıktan sonra bir daha asla kiliseye veya ayinlere
+                    katılmadı. Albert Speer, Hitler'in kiliseye karşı siyasi arkadaşlarına saldırdığını ve kiliseyi
+                    hiçbir zaman resmi olarak terk etmemiş olmasına rağmen,
+                    kiliseye bağlı olmadığını belirtir. Hitler'in, organize bir dinin yokluğunda insanların gerici
+                    olduğunu düşündüğü mistisizme döneceğini hissettiğini ekliyor.
+                    Speer'e göre Hitler, Japon dinî inançlarının veya İslamın Almanlar için "uysal ve gevşek"
+                    Hristiyanlıktan daha uygun bir din olacağına inanıyordu.</p>
+
+                <p style="font-family: 'Times New Roman', Times, serif;">Tarihçi John S. Conway, Hitler'in temelde
+                    Hristiyan kiliselerine karşı olduğunu belirtir. Bullock'a göre, Hitler Tanrı'ya inanmıyordu,
+                    antiklerikal görüşteydi
+                    ve Hristiyan etiğini küçümsüyordu çünkü onun tercih ettiği "en güçlünün hayatta kalması" fikrine
+                    aykırıydılar. Protestanlığın kendi görüşlerine uyan yönlerini
+                    tercih etti ve Katolik Kilisesi'nin hiyerarşik organizasyonunun, ayinlerinin ve deyimlerinin bazı
+                    unsurlarını benimsedi. Hitler kiliseyi toplum üzerinde
+                    önemli bir siyasi muhafazakar etki olarak gördü ve kilise ile "acil siyasi amaçlarına uygun"
+                    stratejik bir ilişki benimsedi. Halk arasında Hitler,
+                    Yahudilere karşı savaşan bir "Aryan İsa"ya inandığını iddia etse de, Hristiyan mirasını ve Alman
+                    Hristiyan kültürünü sıklıkla övdü. Hristiyanlık yanlısı söylemlerine
+                    karşı, Hristiyanlığı "saçmalık" ve "yalanlara dayanan saçmalık" olarak tanımlayan ifadeleriyle
+                    çelişiyordu</p>
+                <p style="font-family: 'Times New Roman', Times, serif;">ABD Stratejik Hizmetler Ofisi'nin (OSS) "Nazi
+                    Master Plan" adlı raporuna göre, Hitler, Reich içindeki Hristiyan kiliselerinin etkisini yok etmeyi
+                    planladı.
+                    Nihai hedefi Hristiyanlığın tamamen ortadan kaldırılmasıydı. Bu hedef, Hitler'in hareketini erken
+                    dönemde bilgilendirdi, ancak o, bu aşırı pozisyonu alenen ifade etmenin
+                    uygunsuz olduğunu gördü. Bullock'a göre Hitler, bu planı uygulamadan önce savaşın bitmesini beklemek
+                    istemişti</p>
+                <p style="font-family: 'Times New Roman', Times, serif;">Speer, Hitler'in Heinrich Himmler'in ve Alfred
+                    Rosenberg'in mistik fikirlerine ve Himmler'in SS'i mitolojileştirme girişimine olumsuz bir bakış
+                    açısına sahip
+                    olduğunu yazdı. Hitler daha pragmatikti ve tutkuları daha pratik kaygılara odaklandı.</p>
+
+
+            </div>
+            <div class="image-container" style="padding: 20px; margin-top: 40px;">
+                <table>
+                    <tr style="padding-top: 15px;">
+                        <td><img src="resimler/olum_ilanı.jpg" alt="Adolf Hitler"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://tr.wikipedia.org/wiki/Adolf_Hitler%27in_%C3%B6l%C3%BCm%C3%BC" target="_blank" style="color: rgb(40, 40, 159);">
+                            <b>ABD' de bir gazete de Hitler'in ölüm haberi</b>
+                        </a>
+                            </td>
+                    </tr>
+
+
+                    <img src="resimler/selamdur.jpg" alt="Ek Resim 1">
+                    <img src="resimler/ciddi.jpg" alt="Ek Resim 2" style="height: 400px;">
+                </table>
+
+
+            </div>
+
+        </div>
+        <h3><b>Sağlığı</b></h3>
+
+        <p>Araştırmacılar çeşitli şekillerde Hitler'in irritabl bağırsak sendromu, deri hastalıkları, düzensiz kalp
+            atışı, koroner skleroz, Parkinson hastalığı,
+            Frengi, dev hücreli arterit ve Kulak çınlamasından muzdarip olduğunu öne sürdüler. 1943'te OSS için
+            hazırlanan bir raporda, Harvard Üniversitesi'nden
+            Walter C. Langer, Hitler'i "nevrotik bir psikopat" olarak tanımladı. Tarihçi Robert G. L. Waite, 1977
+            tarihli The Psychopathic God: Adolf Hitler adlı
+            kitabında, borderline kişilik bozukluğundan muzdarip olduğunu öne sürer. Tarihçiler Henrik Eberle ve
+            Hans-Joachim Neumann, Parkinson hastalığı da dahil olmak
+            üzere bir dizi hastalıktan muzdarip olmasına rağmen, Hitler'in patolojik sanrılar yaşamadığını ve
+            kararlarının her zaman tamamen farkında ve dolayısıyla sorumlu
+            olduğunu düşünüyorlar. Hitler'in tıbbi durumuyla ilgili teorileri kanıtlamak zordur ve bunlara çok fazla
+            ağırlık vermek, Nazi Almanyasının birçok
+            olayını ve sonuçlarını bir bireyin muhtemelen bozulmuş fiziksel sağlığına atfetme etkisine sahip olabilir.
+            Ian Kershaw, Holokost ve II. Dünya Savaşı için
+            yalnızca bir kişiye dayanarak dar açıklamalar peşinde koşmak yerine, hangi sosyal güçlerin Nazi
+            diktatörlüğüne ve politikalarına yol açtığını inceleyerek
+            Alman tarihine daha geniş bir bakış açısının daha iyi olduğunu düşünüyor</p>
+
+        <p>1930'larda bazen Hitler, 1942'den itibaren tüm et ve balıklardan kaçınarak esas olarak vejetaryen diyetini
+            benimsedi. Sosyal etkinliklerde bazen
+            misafirlerinin etten uzak durmalarını sağlamak amacıyla hayvanların katledilmesi ile ilgili grafik
+            anlatımlara yer verdi. Özel sekreteri Martin Bormann,
+            Hitler'e düzenli olarak taze meyve ve sebze tedariki sağlamak için Berghof yakınlarında (Berchtesgaden
+            yakınlarında) bir sera inşa ettirdi</p>
+
+        <p>Hitler vejetaryen olduğu dönemde alkol içmeyi bıraktı ve bundan sonra sadece çok nadiren sosyal ortamlarda
+            bira veya şarap içti.Yetişkin hayatının çoğunda
+            sigara içmiyordu, ancak gençliğinde çok sigara içiyordu (günde 25 ila 40 sigara); sonunda alışkanlığını
+            "para kaybı" olarak nitelendirerek sigarayı bıraktı.
+            Alışkanlığı kırabilecek herkese altın bir saat hediye ederek yakın arkadaşlarını sigarayı bırakmaya teşvik
+            etti. Hitler, 1937'den sonra ara sıra amfetamin
+            kullanmaya başladı ve 1942'nin sonlarında bağımlı hâle geldi. Speer, bu amfetamin kullanımını Hitler'in
+            giderek artan düzensiz davranışına ve esnek olmayan
+            karar verme sürecine bağladı (örneğin, cephelerde nadiren askeri geri çekilmelere izin veriyordu, Normandiya
+            Çıkarması'na yanıt vermekte gecikti)</p>
+
+        <p>Savaş yıllarında özel doktoru Theodor Morell tarafından 90 ilaç reçete yazılan Hitler, kronik mide sorunları
+            ve diğer rahatsızlıklar için her gün birçok hap alıyordu.
+            Düzenli olarak amfetamin, barbitüratlar, opiatlar ve kokain ile potasyum bromür ve atropa belladonna
+            tüketiyordu. 20 Temmuz 1944'te kendisine
+            yapılan suikast girişiminde patlayan bomba sonucu kulak zarı yırtıldı ve bacaklarından 200 ağaç kıymığı
+            çıkarıldı. Hitler'in haber filminde sol elinde titreme
+            ve savaştan önce başlayan ve hayatının sonlarına doğru kötüleşen yürüyüşü görülmektedir. Ernst-Günther
+            Schenck ve hayatının son haftalarında Hitler ile tanışan
+            diğer birkaç doktor da kendisine Parkinson hastalığı teşhisi koymuştur.</p>
+
+        <p>Eylül 1944'te Otto Skorzeny, Wolfsschanze'de Hitler ile bir araya geldi ve savaşın Hitler üzerinde belirgin
+            bir baskı oluşturduğuna dikkat çekti:</p>
+        <p><b>Başkomutan'ın ortaya çıkışıyla derinden sarsıldım, onu en son bir önceki sonbaharda gördüğümde nasıl
+                göründüğünü hatırladım. Eğildi ve çok daha yaşlı
+                görünüyordu, sesinde yorgun bir ton vardı. Bir hastalığa yakalanıp yakalanmadığını merak ettim. Sol eli
+                o kadar şiddetli titriyordu ki, ayağa kalktığında
+                sağ elini tutmak zorunda kaldı.</b></p>
+
+    </div>
+
+</body>
+
+</html>
